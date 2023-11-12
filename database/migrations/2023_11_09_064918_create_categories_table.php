@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('icon')->nullable();
             $table->integer('order')->nullable(); // category izbe - izligi - misali sezonny onimlerdi bas ekranga shigarip qoyiw ushin
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

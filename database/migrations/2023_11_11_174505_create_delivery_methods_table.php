@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('delivery_methods', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedInteger('estimated_time');
+            $table->text('estimated_time');
             $table->unsignedBigInteger('sum');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

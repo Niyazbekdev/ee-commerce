@@ -8,49 +8,33 @@ use App\Http\Requests\UpdateUserAddressRequest;
 
 class UserAddressController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+    }
+
     public function index()
     {
-        //
+        return auth()->user()->addresses;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreUserAddressRequest $request)
     {
-        //
+        auth()->user()->addresses()->create($request->toArray());
+        return true;
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(UserAddress $userAddress)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(UserAddress $userAddress)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateUserAddressRequest $request, UserAddress $userAddress)
     {
         //

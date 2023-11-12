@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Role;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -22,6 +21,16 @@ class UserSeeder extends Seeder
         ]);
 
         $admin->roles()->attach(1);
+
+        $user = User::create([
+            'first_name' => "Art Kautzer",
+            'last_name' => "Chase Klocko",
+            'email' => "mario.borer@example.com",
+            'phone' => '1-775-870-4800',
+            'password' => Hash::make('234'),
+        ]);
+
+        $user->roles()->attach(2);
 
         User::factory()->count(10)->hasAttached([Role::find(2)])->create();
     }

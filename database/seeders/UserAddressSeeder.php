@@ -2,16 +2,30 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class UserAddressSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+
     public function run(): void
     {
-        //
+        User::find(2)->addresses()->create([
+            'latitude' => "42.461682",
+            'longitude'=> " 59.611358",
+            'region'=> "Karakalpakstan",
+            'destrict'=> "nukus",
+            'street'=> "tatibaev",
+            'home'=> "839"
+        ]);
+
+        User::find(2)->addresses()->create([
+            'latitude' => "42.461682",
+            'longitude'=> " 59.611358",
+            'region'=> "Karakalpakstan",
+            'destrict'=> "nukus",
+            'street'=> "sabira kamalova",
+            'home'=> "22"
+        ]);
     }
 }

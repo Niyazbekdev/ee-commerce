@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('user_addresses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
+            $table->text('region')->nullable();
+            $table->text('destrict')->nullable();
+            $table->text('street')->nullable();
+            $table->text('home')->nullable();
             $table->timestamps();
         });
     }
