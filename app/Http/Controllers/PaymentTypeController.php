@@ -15,9 +15,6 @@ class PaymentTypeController extends Controller
         return PaymentType::all();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //
